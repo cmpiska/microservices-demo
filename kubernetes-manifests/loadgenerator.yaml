@@ -67,7 +67,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: loadgenerator
+        image: gcr.io/microservices-demo-123456/loadgenerator:latest
         imagePullPolicy: IfNotPresent
         env:
         - name: FRONTEND_ADDR

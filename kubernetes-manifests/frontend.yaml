@@ -42,7 +42,7 @@ spec:
                 - all
             privileged: false
             readOnlyRootFilesystem: true
-          image: frontend
+          image: gcr.io/microservices-demo-123456/frontend:latest
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 8080

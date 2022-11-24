@@ -41,7 +41,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: recommendationservice
+        image: gcr.io/microservices-demo-123456/recommendationservice:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080

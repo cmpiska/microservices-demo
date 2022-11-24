@@ -40,7 +40,7 @@ spec:
                 - all
             privileged: false
             readOnlyRootFilesystem: true
-          image: checkoutservice
+          image: gcr.io/microservices-demo-123456/checkoutservice:latest
           imagePullPolicy: IfNotPresent
           ports:
           - containerPort: 5050

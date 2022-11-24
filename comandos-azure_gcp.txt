@@ -1,0 +1,206 @@
+    1  ls
+    2  sudo apt update
+    3  sudo apt upgrade
+    4  sudo reboot
+    5  git config --global user.name "cmpiska"
+    6  git config --global user.email "claudiopiska@gmail.com"
+    7  git config --global core.autocrlf false
+    8  git config --global core.filemode false
+    9  git config --global color.ui true
+   10  ssh-keygen -o -t ed25519 -C "claudiopiska@gmail.com" -N "" -f ~/.ssh/id_ed25519
+   11  cat ~/.ssh/id_ed25519.pub
+   12  cd ~/.ssh
+   13  ls
+   14  cat authorized_keys 
+   15  curl https://github.com/cmpiska.keys >> authorized_keys 
+   16  cat authorized_keys 
+   17  sudo apt install apt-transport-https ca-certificates gnupg
+   18  echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt
+   19  echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+   20  curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+   21  sudo apt update
+   22  sudo apt install kubectl google-cloud-cli google-cloud-cli-gke-gcloud-auth-plugin google-cloud-sdk-gke-gcloud-auth-plugin
+   23  cd ..
+   24  curl https://releases.rancher.com/install-docker/20.10.sh | sh
+   25  sudo usermod -aG docker $USER
+   26  exit
+   27  export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+   28  echo 'export USE_GKE_GCLOUD_AUTH_PLUGIN=True' >> ~/.bashrc
+   29  ls
+   30  git clone git@github.com:cmpiska/microservices-demo.git
+   31  ls
+   32  cd microservices-demo/
+   33  ls
+   34  cd ..
+   35  gcloud init
+   36  gcloud projects list
+   37  gcloud init
+   38  gcloud projects list
+   39  gcloud projects create microservices-demo
+   40  gcloud init
+   41  gcloud projects list
+   42  export PROJECT_ID=microservices-demo-123456
+   43  echo "export PROJECT_ID=$PROJECT_ID" >> ~/.bashrc
+   44  gcloud projects list
+   45  gcloud auth configure-docker
+   46  gcloud init
+   47  cd microservices-demo/
+   48  ls
+   49  vim build.sh 
+   50  chmod +x build.sh
+   51  ls -a
+   52  ls -la
+   53  ./build.sh 
+   54  cat build.sh >> push.sh
+   55  ls
+   56  ls -a
+   57  touch push.sh
+   58  ls
+   59  chmod +x push.sh
+   60  ls
+   61  cat build.sh >> push.sh
+   62  vom push.sh 
+   63  vim push.sh 
+   64  push.sh 
+   65  ./push.sh 
+   66  gcloud auth configure-docker
+   67  ./push.sh 
+   68  source ~/.bashrc
+   69  ./push.sh 
+   70  gcloud services enable containerregistry.googleapis.com
+   71  ./push.sh 
+   72  gcloud images ls
+   73  gcloud image ls
+   74  gcloud storage
+   75  gcloud storage ls
+   76  gcloud container ls
+   77  gcloud container clusters create demo-cluster --num-nodes=3
+   78  gcloud container clusters create demo-cluster --num-nodes=5
+   79  gcloud container clusters create demo-cluster --num-nodes=1
+   80  gcloud auth configure-docker
+   81  gcloud auth configure-dockergcloud container clusters create demo-cluster --num-nodes=3
+   82  gcloud container clusters create demo-cluster --num-nodes=3
+   83  gcloud services list
+   84  gcloud container clusters get-credentials demo-cluster
+   85  gcloud container clusters create demo-cluster --num-nodes=3
+   86* 
+   87  gcloud container clusters create demo-cluster --num-nodes=3
+   88  gcloud container clusters get-credentials demo-cluster
+   89  vim deploy.sh 
+   90  ls
+   91  cd kubernetes-manifests/
+   92  ls
+   93  cd ..
+   94  cat build.sh 
+   95  cd kubernetes-manifests/
+   96  ls
+   97  vim adservice.yaml 
+   98  vim  currencyservice.yaml 
+   99  vim loadgenerator.yaml 
+  100  vim emailservice.yaml 
+  101  vim paymentservice.yaml 
+  102  vim shippingservice.yaml 
+  103  vim cartservice.yaml 
+  104  vim frontend.yaml 
+  105  vim productcatalogservice.yaml 
+  106  vim checkoutservice.yaml 
+  107  vim recommendationservice.yaml 
+  108  vim currencyservice.yaml 
+  109  vim loadgenerator.yaml 
+  110  vim adservice.yaml 
+  111  vim emailservice.yaml 
+  112  vim paymentservice.yaml 
+  113  vim shippingservice.yaml 
+  114  vim cartservice.yaml 
+  115  cd ..
+  116  ls
+  117  cat ./deploy.sh 
+  118  kubectl apply -f adservice.yaml
+  119  cd kubernetes-manifests/
+  120  kubectl apply -f adservice.yaml
+  121  kubectl apply -f cartservice.yaml
+  122  kubectl apply -f checkoutservice.yaml 
+  123  kubectl apply -f currencyservice.yaml 
+  124  kubectl apply -f emailservice.yaml 
+  125  kubectl apply -f frontend.yaml 
+  126  kubectl apply -f paymentservice.yaml 
+  127  kubectl apply -f productcatalogservice.yaml 
+  128  kubectl apply -f redis.yaml 
+  129  kubectl apply -f shippingservice.yaml 
+  130  kubectl apply -f loadgenerator.yaml 
+  131  kubectl get pods
+  132  kubectl get all
+  133  gcloud --help
+  134  gcloud image
+  135  gcloud compute images
+  136  gcloud compute machine-images
+  137  gcloud container images
+  138  gcloud container images list
+  139  vim adservice.yaml 
+  140  kubectl apply -f adservice.yaml
+  141  kubectl get pods
+  142  vim cartservice.yaml 
+  143  kubectl get pods
+  144  kubectl apply -f cartservice.yaml
+  145  kubectl get pods
+  146  kubectl delete -f cartservice.yaml
+  147  kubectl delete -f adservice.yaml
+  148  kubectl delete -f checkoutservice.yaml 
+  149  kubectl delete -f currencyservice.yaml 
+  150  kubectl delete -f emailservice.yaml 
+  151  kubectl delete -f frontend.yaml 
+  152  kubectl delete -f loadgenerator.yaml 
+  153  kubectl delete -f paymentservice.yaml 
+  154  kubectl delete -f productcatalogservice.yaml 
+  155  kubectl delete -f shippingservice.yaml 
+  156  kubectl get pods
+  157  kubectl get all
+  158  ls
+  159  kubectl apply -f cartservice.yaml
+  160  kubectl get pods
+  161  kubectl apply -f adservice.yaml
+  162  kubectl get pods
+  163  vim currencyservice.yaml 
+  164  vim loadgenerator.yaml 
+  165  vim emailservice.yaml 
+  166  vim paymentservice.yaml 
+  167  vim shippingservice.yaml 
+  168  vim frontend.yaml 
+  169  vim productcatalogservice.yaml 
+  170  vim checkoutservice.yaml 
+  171  vim recommendationservice.yaml 
+  172  kubectl apply -f currencyservice.yaml 
+  173  kubectl apply -f emailservice.yaml 
+  174  kubectl apply -f paymentservice.yaml 
+  175  kubectl apply -f shippingservice.yaml 
+  176  kubectl apply -f frontend.yaml 
+  177  kubectl apply -f productcatalogservice.yaml 
+  178  kubectl apply -f checkoutservice.yaml 
+  179  kubectl apply -f recommendationservice.yaml 
+  180  kubectl apply -f loadgenerator.yaml 
+  181  kubectl get pods
+  182  vim checkoutservice.yaml 
+  183  kubectl get pods
+  184  kubectl get all
+  185  cd ..
+  186  vim build.sh 
+  187  docker push gcr.io/$PROJECT_ID/checkoutservice:latest
+  188* 
+  189  kubectl apply -f checkoutservice.yaml 
+  190  kubectl get all
+  191  kubectl get pods
+  192  vim checkoutservice.yaml 
+  193  kubectl get pods
+  194  kubectl apply -f checkoutservice.yaml 
+  195  kubectl get pods
+  196  ls
+  197  git branch
+  198  git branch azure_e_GCP
+  199  git branch
+  200  git checkout azure_e_GCP 
+  201  ls
+  202  cd ..
+  203  git branch 
+  204  ls
+  205  history
+  206  history >> comandos-azure_gcp.txt

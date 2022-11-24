@@ -41,7 +41,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: cartservice
+        image: gcr.io/microservices-demo-123456/cartservice:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 7070

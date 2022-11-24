@@ -40,7 +40,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: shippingservice
+        image: gcr.io/microservices-demo-123456/shippingservice:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 50051
